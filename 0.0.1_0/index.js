@@ -405,7 +405,7 @@ $(document).ready(function() {
 	});
 
 	// 监听form校验事件
-	$('body').on('input', '.form-item input', function() {
+	$('body').on('input', '.form-item input', function(e) {
 		$(this).closest('.form-item').next('.form-item-err').remove();
 		$(this).css('border-color', '#bcc3cd');
 		if (!$(this).val()) {
@@ -423,7 +423,10 @@ $(document).ready(function() {
 			className: 'dialog-new',
 			type:'success',
 			title:'新增规则',
-			children:'<div class="form-item"><label>源地址</label><input id="new-prev" placeholder="请输入地址" class="kuma-input"></div><div class="form-item"><label>代理地址</label><input id="new-next" placeholder="请输入地址" class="kuma-input"></div>',
+			children: `<div class="form-item"><label>源地址</label><input id="new-prev" placeholder="请输入地址" class="kuma-input"></div>
+				<div class="form-item"><label>代理地址</label><input id="new-next" placeholder="请输入地址" class="kuma-input"></div>
+				<div class="form-item" style="visibility:hidden"><label>其他</label></div>
+			`,
 			width: '600px'
 		}, function(ret) {
 			if (ret.index == 0) {
@@ -453,7 +456,7 @@ $(document).ready(function() {
 			className: 'dialog-new',
 			type:'success',
 			title:'新增规则',
-			children:'<div class="form-item"><label>源地址</label><input id="new-prev" placeholder="请输入地址" class="kuma-input"></div><div class="form-item"><label>代理地址</label><input id="new-next" placeholder="请输入地址" class="kuma-input"></div>',
+			children:'<div class="form-item"><label>源地址</label><input id="new-prev" placeholder="请输入地址" class="kuma-input"></div><div class="form-item"><label>代理地址</label><input id="new-next" placeholder="请输入地址" class="kuma-input"></div><div class="form-item" style="visibility:hidden"><label>其他</label></div>',
 			width: '600px'
 		}, function(ret) {
 			if (ret.index == 0) {
@@ -701,7 +704,7 @@ $(document).ready(function() {
 			className: 'dialog-new',
 			type:'success',
 			title:'新增规则',
-			children:'<div class="form-item"><label>源地址</label><input id="new-prev" value="' + rule.from + '" placeholder="请输入地址" class="kuma-input"></div><div class="form-item"><label>代理地址</label><input id="new-next" value="' + rule.to + '" placeholder="请输入地址" class="kuma-input"></div>',
+			children:'<div class="form-item"><label>源地址</label><input id="new-prev" value="' + rule.from + '" placeholder="请输入地址" class="kuma-input"></div><div class="form-item"><label>代理地址</label><input id="new-next" value="' + rule.to + '" placeholder="请输入地址" class="kuma-input"></div><div class="form-item" style="visibility:hidden"><label>其他</label></div>',
 			width: '600px'
 		}, function(ret) {
 			if (ret.index == 0) {
@@ -752,7 +755,7 @@ $(document).ready(function() {
 			className: 'dialog-new',
 			type:'success',
 			title:'新增规则',
-			children:'<div class="form-item"><label>源地址</label><input id="new-prev" value="' + rule.from + '" placeholder="请输入地址" class="kuma-input"></div><div class="form-item"><label>代理地址</label><input id="new-next" value="' + rule.to + '" placeholder="请输入地址" class="kuma-input"></div>',
+			children:'<div class="form-item"><label>源地址</label><input id="new-prev" value="' + rule.from + '" placeholder="请输入地址" class="kuma-input"></div><div class="form-item"><label>代理地址</label><input id="new-next" value="' + rule.to + '" placeholder="请输入地址" class="kuma-input"></div><div class="form-item" style="visibility:hidden"><label>其他</label></div>',
 			width: '600px'
 		}, function(ret) {
 			if (ret.index == 0) {

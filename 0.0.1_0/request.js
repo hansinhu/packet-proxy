@@ -25,7 +25,6 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
 	// writeCookies(sender);
 	for (var i = 0; i < cookies.length; i++) {
 		if (cookies[i].isActive) {
-			
 			var curtUrl = cookies[i].to;
 
 			curtUrl = curtUrl.replace(/^(?:https?:\/\/)?/i, '').split('/')[0];
@@ -37,7 +36,7 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
 			// 只匹配当前符合规则的请求url
 			if (!!url && curtUrlRegex.test(url)) {
 				chrome.cookies.getAll({
-					domain: curtDomain
+					url: curtDomain // todo domian为啥匹配不到？ 版本更新导致的？？
 				}, function (cookieL) {
 					for (var x = 0; x < cookieL.length; x++) {
 						var { name, value } = cookieL[x];
